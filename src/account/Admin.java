@@ -1,2 +1,4 @@
-package account;public class Admin {
+package account;
+
+public class Admin {
 }

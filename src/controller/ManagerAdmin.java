@@ -1,2 +1,4 @@
-package controller;public class ManagerAdmin {
+package controller;
+
+public class ManagerAdmin {
 }

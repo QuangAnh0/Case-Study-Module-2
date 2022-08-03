@@ -1,2 +1,4 @@
-package account;public class User {
+package account;
+
+public class User {
 }

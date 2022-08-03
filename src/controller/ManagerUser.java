@@ -1,2 +1,4 @@
-package controller;public class ManagerUser {
+package controller;
+
+public class ManagerUser {
 }
