@@ -10,6 +10,7 @@ public class Bill {
     private Date startUsed;
     private Date endUsed;
 
+
     public LocalTime getStartTime() {
         return startTime;
     }

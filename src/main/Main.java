@@ -1,5 +1,6 @@
 package main;
 
+import account.Login;
 import manager.ManagerComputer;
 import manager.ManagerFoodDrink;
 import model.FoodDrink;
@@ -15,7 +16,8 @@ public class Main {
 //        managerComputer.delete();
             managerComputer.display();
         managerFoodDrink.displayFoodDrink();
-
+        Login LG = new Login();
+        LG.run();
 
 
 
