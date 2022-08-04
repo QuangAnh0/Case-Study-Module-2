@@ -4,9 +4,9 @@ import model.Computer;
 
 import java.util.*;
 
-public class ManagerComputer implements ModelManager {
+public class ManagerComputer extends ManagerFoodDrink {
     private static List<Computer> computerList = new ArrayList<>();
-    private Set<Integer> numberList = new HashSet<>();
+    private static Set<Integer> numberList = new HashSet<>();
     {
     Computer computer1 =new Computer("Nomal",1,5000);
     Computer computer2 =new Computer("Nomal",2,5000);
@@ -21,12 +21,12 @@ public class ManagerComputer implements ModelManager {
     computerList.add(computer5);
     computerList.add(computer6);
     }
-    public List<Computer> getComputerList() {
+    public static List<Computer> getComputerList() {
         return computerList;
     }
 
-    @Override
-    public void create() {
+
+    public static void create() {
         System.out.println("Bạn đang tạo thêm máy tính");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập loại máy tính");
@@ -41,11 +41,10 @@ public class ManagerComputer implements ModelManager {
         computerList.add(computer);
         numberList.add(computer.getNumberComputer());
         System.out.println(computer);
-        System.out.println(computerList);
 
     }
 
-    public void checkNumberComputer(int number) {
+    public  static void checkNumberComputer(int number) {
         for (Computer computer : computerList) {
             while (number == computer.getNumberComputer()) {
                 System.out.println("Mời sếp nhập lại số máy vì đã có rồi");
@@ -57,8 +56,8 @@ public class ManagerComputer implements ModelManager {
         }
     }
 
-    @Override
-    public void delete() {
+
+    public static void delete() {
         System.out.println("Bạn đang loại bỏ máy tính");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập số máy muốn bỏ");
@@ -68,7 +67,7 @@ public class ManagerComputer implements ModelManager {
     }
 
 
-    public void checkToDelete(int numberDelete) {
+    public static void checkToDelete(int numberDelete) {
         while (!numberList.contains(numberDelete)) {
             System.out.println("Không tồn tại máy tính muốn xoá");
             Scanner scanner = new Scanner(System.in);
@@ -79,13 +78,12 @@ public class ManagerComputer implements ModelManager {
             if (numberDelete == computerList.get(j).getNumberComputer()) {
                 computerList.remove(j);
                 System.out.println("Xoá thành công máy tính số " + numberDelete);
-                System.out.println(computerList);
             }
         }
     }
 
-    @Override
-    public void edit() {
+
+    public static void edit() {
         System.out.println("Bạn đang chỉnh sửa máy tính");
         Scanner scanner = new Scanner(System.in);
         System.out.println(numberList);
@@ -100,12 +98,11 @@ public class ManagerComputer implements ModelManager {
                 int price = scanner1.nextInt();
                 computerList.get(i).setType(type);
                 computerList.get(i).setPrice(price);
-                System.out.println(computerList);
             }
         }
     }
 
-    public void checkNumberToEdit(int numberEdit) {
+    public static void checkNumberToEdit(int numberEdit) {
         while (!numberList.contains(numberEdit)) {
             System.out.println("Không tồn tại máy tính cần sửa");
             Scanner scanner = new Scanner(System.in);
@@ -115,8 +112,8 @@ public class ManagerComputer implements ModelManager {
 
     }
 
-    @Override
-    public void display() {
+
+    public static void display() {
         System.out.println(getComputerList());
     }
 

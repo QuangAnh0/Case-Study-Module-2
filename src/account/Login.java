@@ -4,6 +4,8 @@ import controller.ManagerUser;
 
 import java.util.Scanner;
 
+import static menu.MenuInterface.menuMain;
+
 public class Login  {
     public Scanner scanner = new Scanner(System.in);
     private ManagerUser userManagement = new ManagerUser();
@@ -13,7 +15,6 @@ public class Login  {
     public void run() {
         int choice = -1;
 
-        do {
             menu();
             System.out.println("Nhập lựa chọn của bạn");
             choice = scanner.nextInt();
@@ -30,7 +31,6 @@ public class Login  {
                 case 0:
 
             }
-        } while (choice != 0);
     }
 
     private  void doLogin() {
@@ -43,9 +43,11 @@ public class Login  {
         boolean isLogin = userManagement.checkUserLogin(acount, passwork);
         if (isLogin){
             System.out.println("Đang nhập thành công");
+            menuMain();
 
         }else {
             System.err.println("Tài khoản hoặc mật khẩu không đúng");
+            doLogin();
         }
     }
 
@@ -112,7 +114,7 @@ private int inputMonney(){
 }
 
     public static void menu() {
-        System.out.println("---Ứng dụng quản lí khách sạn---");
+        System.out.println("---Chào mừng đến với cyberLongBien---");
         System.out.println("1.Đăng nhập");
         System.out.println("2.Đăng kí");
         System.out.println("0.Thoát");

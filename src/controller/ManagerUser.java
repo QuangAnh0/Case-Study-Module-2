@@ -33,7 +33,7 @@ public class ManagerUser implements WriteFile, ReadFile,Serializable {
         public void register(User user) {
             this.users.add(user);
             try {
-                writeFile("file\\user.txt");
+                writeFile("file/user.txt");
             } catch (IOException e) {
                 e.printStackTrace();
             }

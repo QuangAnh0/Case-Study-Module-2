@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ManagerFoodDrink {
-    List<FoodDrink> list ;
+    private static List<FoodDrink> list;
 
-    public List<FoodDrink> getList() {
+    public static List<FoodDrink> getList() {
         return list;
     }
 
@@ -68,7 +68,7 @@ public static int inputKind() {
 
 
 
-    public void displayFoodDrink() {
+    public static void displayFoodDrink() {
         System.out.println(getList());
     }
 }
