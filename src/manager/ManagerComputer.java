@@ -20,6 +20,12 @@ public class ManagerComputer extends ManagerFoodDrink {
     computerList.add(computer4);
     computerList.add(computer5);
     computerList.add(computer6);
+    numberList.add(computer1.getNumberComputer());
+    numberList.add(computer2.getNumberComputer());
+    numberList.add(computer3.getNumberComputer());
+    numberList.add(computer4.getNumberComputer());
+    numberList.add(computer5.getNumberComputer());
+    numberList.add(computer6.getNumberComputer());
     }
     public static List<Computer> getComputerList() {
         return computerList;
@@ -89,14 +95,15 @@ public class ManagerComputer extends ManagerFoodDrink {
         System.out.println(numberList);
         System.out.println("Nhập số máy tính muốn sửa");
         int numberComputer = scanner.nextInt();
+        checkNumberToEdit(numberComputer);
         for (int i = 0; i < computerList.size(); i++) {
             if (numberComputer == computerList.get(i).getNumberComputer()) {
                 Scanner scanner1 = new Scanner(System.in);
-                System.out.println("Sửa loại máy tính");
-                String type = scanner1.nextLine();
+//                System.out.println("Sửa loại máy tính");
+//                String type = scanner1.nextLine();
                 System.out.println("Sửa giá giờ chơi");
                 int price = scanner1.nextInt();
-                computerList.get(i).setType(type);
+//                computerList.get(i).setType(type);
                 computerList.get(i).setPrice(price);
             }
         }
@@ -114,7 +121,11 @@ public class ManagerComputer extends ManagerFoodDrink {
 
 
     public static void display() {
-        System.out.println(getComputerList());
+        for (Computer computer:computerList
+             ) {
+            System.out.println(computer);
+        }
+
     }
 
 

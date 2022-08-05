@@ -69,6 +69,9 @@ public static int inputKind() {
 
 
     public static void displayFoodDrink() {
-        System.out.println(getList());
+        for (FoodDrink fooddrink:list
+             ) {
+            System.out.println(fooddrink);
+        }
     }
 }
